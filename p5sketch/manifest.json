@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "WhiteBoardExtension",
+    "version": "1.0",
+    "description": "Convert the webpage into a white board where user can draw, mark, highlight something and download the webpage in pdf form.",
+    "permissions": ["activeTab"],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background":{
+        "scripts":["background.js"]
+     },
+    "content_scripts":[
+        {
+            "matches":[
+                "<all_urls>"
+            ],
+
+            "js":["p5.js","sketch.js"]
+        }
+    ]
+  }
+  

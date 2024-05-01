@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Whiteboard Extension",
+    "version": "1.0",
+    "description": "An extension for drawing and annotating web pages.",
+    "browser_action": {
+      
+      "default_popup": "frontend/src/popup.html"
+    },
+    "permissions": ["activeTab", "storage"],
+    "background": {
+      "service_worker": "frontend/src/background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["frontend/src/content.js"],
+        "css": ["frontend/src/style.css"]
+      }
+    ]
+  }
+  
